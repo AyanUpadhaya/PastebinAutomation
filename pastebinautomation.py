@@ -16,9 +16,11 @@ class Pastebin:
         'api_user_key':self.api_user_key,
         'api_option':'paste',
         'api_paste_code':source_data,
+        'api_paste_format':api_paste_format,
+        'api_folder_key':api_folder_key,
         'api_paste_name':paste_name,}
 
-        r=requests.post(url=self.API_ENDPOINT,data=data)
+        r=requests.post(url=self.API_ENDPOINT,data=data,timeout=6)
 
         print(r)
         print(r.text)
